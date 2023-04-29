@@ -1,27 +1,26 @@
 import pandas as pd
 import numpy as np
-import datetime
-
-# Convert all columns with time related fields to total seconds or minutes.
-def time_format_to_float(row):
-    try:
-        # Check if time string is in format 'HH:MM:SS'
-        time_obj = datetime.datetime.strptime(str(row), '%H:%M:%S')
-        minutes = time_obj.minute + time_obj.hour * 60
-        return float(minutes)
-    except ValueError:
-        try:
-            # Check if time string is in format 'M:SS'
-            time_obj = datetime.datetime.strptime(str(row), '%M:%S')
-            seconds = time_obj.second + time_obj.minute * 60
-            return float(seconds)
-        except ValueError:
-            return np.nan
-
-#--------------------------------------------------------------------------------------------------------------------------------------------------------------------------    
+import datetime    
 
 # Cleans and formats a csv file for swim, bike or run activities from garmin connect.
 def clean_csv(file_path: str):
+
+    # Convert all columns with time related fields to total seconds or minutes.
+    def time_format_to_float(row):
+        try:
+            # Check if time string is in format 'HH:MM:SS'
+            time_obj = datetime.datetime.strptime(str(row), '%H:%M:%S')
+            minutes = time_obj.minute + time_obj.hour * 60
+            return float(minutes)
+        except ValueError:
+            try:
+                # Check if time string is in format 'M:SS'
+                time_obj = datetime.datetime.strptime(str(row), '%M:%S')
+                seconds = time_obj.second + time_obj.minute * 60
+                return float(seconds)
+            except ValueError:
+                return np.nan
+            
     df = pd.read_csv(file_path)
 
     columnsToDrop = ['Favorite', 'Title', 'Avg GAP', 'Decompression', 'Surface Interval', 'Dive Time', 'Total Reps', 'Flow', 'Grit', 'Best Lap Time', 'Avg GCT Balance']
