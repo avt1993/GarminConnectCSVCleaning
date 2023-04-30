@@ -8,13 +8,13 @@ GarminCoonectETL contains the following funtions:
 - **create_ranges()** ---> This function will receive multiple variables and will return a Dataframe with **pace** or **power** ranges. The purpose of this function is to order data into ranges in order to better understand and identify patterns or trends depending on the athletes swim/run pace or bike power output.
 
 # <p align = "center"> **CSV FILE BEFORE APPLYING CLEAN_CSV() FUNTION** </p>
-<img src = "/Users/antoniovillardaga/Documents/Python/GarminConnectETL/Screenshots/raw_df.png" title = "Raw Dataframe">
+<img src = "./GarminConnectETL/Screenshots/raw_df.png" title = "Raw Dataframe">
 
 # <p align = "center"> **CSV FILE AFTER APPLYING CLEAN_CSV() FUNTION** </p>
-<img src = "/Users/antoniovillardaga/Documents/Python/GarminConnectETL/Screenshots/cleaned_df.png" title = "Raw Dataframe">
+<img src = "./GarminConnectETL/Screenshots/cleaned_df.png" title = "Raw Dataframe">
 
 # <p align = "center"> **DATAFRAME WITH RANGES AFTER APPLYING CREATE_RANGES() FUNCTION** </p>
-<img src = "/Users/antoniovillardaga/Documents/Python/GarminConnectETL/Screenshots/ranges_df.png" title = "Raw Dataframe">
+<img src = "./GarminConnectETL/Screenshots/ranges_df.png" title = "Raw Dataframe">
 
 
 
